@@ -1,4 +1,8 @@
+from selene.support.shared import browser
+
 from demo_qa_tests.model.pages import registration_form
+from utils import unit_9_attach
+
 
 
 def test_submit_student_details(open_and_quit_browser_automation_practice_form):
@@ -33,7 +37,9 @@ def test_submit_student_details(open_and_quit_browser_automation_practice_form):
                 ('State and City', 'Haryana Karnal')
             ],
         )
-
+    unit_9_attach.add_logs(browser)
+    unit_9_attach.add_screenshot(browser)
+    unit_9_attach.add_html(browser)
 
 
 
