@@ -1,3 +1,4 @@
+import allure
 from selene.support.shared import browser
 
 from demo_qa_tests.model.pages import registration_form
@@ -16,13 +17,11 @@ def test_submit_student_details(open_and_quit_browser_automation_practice_form):
     registration_form.set_hobby('Music')
     registration_form.set_picture('resources/picture.jpg')
     registration_form.set_address('Russia, Moscow')
-
     registration_form.scroll_to_bottom()
     registration_form.set_state('Haryana')
     registration_form.set_city('Karnal')
 
     registration_form.click_submit()
-
     registration_form.should_have_submitted(
             [
                 ('Student Name', 'Никита Кузнецов'),
